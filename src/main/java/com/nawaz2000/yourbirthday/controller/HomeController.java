@@ -4,18 +4,21 @@ import java.text.ParseException;
 
 import javax.websocket.server.PathParam;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.nawaz2000.yourbirthday.service.AgeFinder;
-import com.nawaz2000.yourbirthday.service.BirthStone;
-import com.nawaz2000.yourbirthday.service.ChineseBirthYear;
+import com.nawaz2000.yourbirthday.service.BirthdayService;
+
 import com.nawaz2000.yourbirthday.service.HelpWithDate;
-import com.nawaz2000.yourbirthday.service.ZodiacFinder;
+
 
 @Controller
 public class HomeController {
+	
+	@Autowired
+	BirthdayService service;
 	
 	@GetMapping("/")
 	public String showHome() {
@@ -30,19 +33,19 @@ public class HomeController {
 			System.out.println(x);
 		System.out.println("\n\n-------------------->");
 		
-		model.addAttribute("zodiac", ZodiacFinder.findZodiac(Integer.parseInt(date2[2]), date2[1]));
-		  System.out.println("Zodiac sign: " + ZodiacFinder.findZodiac(Integer.parseInt(date2[2]), date2[1]));
+		model.addAttribute("zodiac", service.findZodiac(Integer.parseInt(date2[2]), date2[1]));
+		  System.out.println("Zodiac sign: " + service.findZodiac(Integer.parseInt(date2[2]), date2[1]));
 		model.addAttribute("birthDay", date2[0]);
 		  System.out.println("Birth day: " + date2[0]);
-		model.addAttribute("age", AgeFinder.age(date));
-		  System.out.println("Age: " + AgeFinder.age(date).get("Years") + " years "
-				   + AgeFinder.age(date).get("Months") + " months " + AgeFinder.age(date).get("Days") + " days");
+		model.addAttribute("age", service.age(date));
+		  System.out.println("Age: " + service.age(date).get("Years") + " years "
+				   + service.age(date).get("Months") + " months " + service.age(date).get("Days") + " days");
 		
-		model.addAttribute("chineseBirthAnimal", ChineseBirthYear.chineseBirthAnimal(date));
-		  System.out.println("Chinese birth animal: " + ChineseBirthYear.chineseBirthAnimal(date));
+		model.addAttribute("chineseBirthAnimal", service.chineseBirthAnimal(date));
+		  System.out.println("Chinese birth animal: " + service.chineseBirthAnimal(date));
 		  
-		model.addAttribute("birthStone", BirthStone.birthStone(date));
-		  System.out.println("Birthstone: " + BirthStone.birthStone(date));
+		model.addAttribute("birthStone", service.birthStone(date));
+		  System.out.println("Birthstone: " + service.birthStone(date));
 		
 		return "redirect:/";
 	}

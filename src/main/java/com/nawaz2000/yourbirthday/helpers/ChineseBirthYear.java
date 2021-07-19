@@ -1,10 +1,15 @@
-package com.nawaz2000.yourbirthday.service;
+package com.nawaz2000.yourbirthday.helpers;
 
 import java.text.ParseException;
 
+import org.springframework.stereotype.Component;
+
+import com.nawaz2000.yourbirthday.service.HelpWithDate;
+
+@Component("chineseBirthYear")
 public class ChineseBirthYear {
 	
-	public static String chineseBirthAnimal(String date) throws NumberFormatException, ParseException {
+	public String chineseBirthAnimal(String date) throws NumberFormatException, ParseException {
 		
 		int year = Integer.parseInt(HelpWithDate.dateHelper(date)[5]);
 		

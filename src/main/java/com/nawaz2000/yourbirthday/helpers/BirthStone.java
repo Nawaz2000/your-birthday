@@ -1,10 +1,15 @@
-package com.nawaz2000.yourbirthday.service;
+package com.nawaz2000.yourbirthday.helpers;
 
 import java.text.ParseException;
 
+import org.springframework.stereotype.Component;
+
+import com.nawaz2000.yourbirthday.service.HelpWithDate;
+
+@Component("birthStone")
 public class BirthStone {
 	
-	public static String birthStone(String date) throws ParseException {
+	public String birthStone(String date) throws ParseException {
 		
 		String[] newDate = HelpWithDate.dateHelper(date);
 		

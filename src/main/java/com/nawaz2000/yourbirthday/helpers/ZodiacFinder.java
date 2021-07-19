@@ -1,8 +1,11 @@
-package com.nawaz2000.yourbirthday.service;
+package com.nawaz2000.yourbirthday.helpers;
 
+import org.springframework.stereotype.Component;
+
+@Component("zodiacFinder")
 public class ZodiacFinder {
 
-	public static String findZodiac(int day, String month) {
+	public String findZodiac(int day, String month) {
 		String sign = "";
 		if (month.equalsIgnoreCase("Jan")) {
 			if (day < 20)

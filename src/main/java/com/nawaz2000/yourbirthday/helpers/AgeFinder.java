@@ -1,4 +1,4 @@
-package com.nawaz2000.yourbirthday.service;
+package com.nawaz2000.yourbirthday.helpers;
 
 import java.text.ParseException;
 import java.time.LocalDate;
@@ -7,9 +7,14 @@ import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.Locale;
 
+import org.springframework.stereotype.Component;
+
+import com.nawaz2000.yourbirthday.service.HelpWithDate;
+
+@Component("ageFinder")
 public class AgeFinder {
 	
-	public static HashMap<String, Integer> age(String date) throws ParseException {
+	public HashMap<String, Integer> age(String date) throws ParseException {
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 		formatter = formatter.withLocale( Locale.US );  // Locale specifies human language for translating, and cultural norms for lowercase/uppercase and abbreviations and such. Example: Locale.US or Locale.CANADA_FRENCH
 		LocalDate dateOfBirth = LocalDate.parse(HelpWithDate.formatDate(date), formatter);
