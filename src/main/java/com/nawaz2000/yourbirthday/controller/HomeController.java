@@ -10,6 +10,8 @@ import javax.websocket.server.PathParam;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import com.nawaz2000.yourbirthday.service.ZodiacFinder;
+
 @Controller
 public class HomeController {
 	
@@ -20,9 +22,14 @@ public class HomeController {
 	
 	@GetMapping("/birthdayInfo")
 	public String getBInfo(@PathParam(value = "date") String date) throws ParseException {
-		System.out.println("unformatted: " + date);
+		DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+		Date date1 = formatter.parse(date);
+		String[] date2 = date1.toGMTString().split("\\s+");
+		System.out.println(ZodiacFinder.findZodiac(date1.getDay(), date2[1]));
+		
+		
+		
 		String formattedDate = formatDate(date);
-		System.out.println("formatted: " + formattedDate);
 		return "redirect:/";
 	}
 	
