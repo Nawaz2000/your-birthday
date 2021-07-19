@@ -20,7 +20,6 @@ public class HelpWithDate {
 		DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 		Date date1 = formatter.parse(date);
 		
-		System.out.println(date1);
 		SimpleDateFormat dmyFormat = new SimpleDateFormat("yyyy-MM-dd");
 		String dmy = dmyFormat.format(date1);
 		

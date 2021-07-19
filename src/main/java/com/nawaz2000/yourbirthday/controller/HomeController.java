@@ -27,11 +27,8 @@ public class HomeController {
 	
 	@GetMapping("/birthdayInfo")
 	public String getBInfo(@PathParam(value = "date") String date, Model model) throws ParseException {
-		String[] date2 = HelpWithDate.dateHelper(date);
 		
-		for (String x : date2)
-			System.out.println(x);
-		System.out.println("\n\n-------------------->");
+		String[] date2 = HelpWithDate.dateHelper(date);
 		
 		model.addAttribute("zodiac", service.findZodiac(Integer.parseInt(date2[2]), date2[1]));
 		  System.out.println("Zodiac sign: " + service.findZodiac(Integer.parseInt(date2[2]), date2[1]));
