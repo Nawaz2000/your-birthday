@@ -1,9 +1,6 @@
 package com.nawaz2000.yourbirthday.controller;
 
-import java.text.DateFormat;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import javax.websocket.server.PathParam;
 
@@ -12,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.nawaz2000.yourbirthday.service.AgeFinder;
+import com.nawaz2000.yourbirthday.service.BirthStone;
 import com.nawaz2000.yourbirthday.service.ChineseBirthYear;
 import com.nawaz2000.yourbirthday.service.HelpWithDate;
 import com.nawaz2000.yourbirthday.service.ZodiacFinder;
@@ -41,7 +39,10 @@ public class HomeController {
 				   + AgeFinder.age(date).get("Months") + " months " + AgeFinder.age(date).get("Days") + " days");
 		
 		model.addAttribute("chineseBirthAnimal", ChineseBirthYear.chineseBirthAnimal(date));
-		System.out.println("Chinese birth animal: " + ChineseBirthYear.chineseBirthAnimal(date));
+		  System.out.println("Chinese birth animal: " + ChineseBirthYear.chineseBirthAnimal(date));
+		  
+		model.addAttribute("birthStone", BirthStone.birthStone(date));
+		  System.out.println("Birthstone: " + BirthStone.birthStone(date));
 		
 		return "redirect:/";
 	}
