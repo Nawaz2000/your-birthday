@@ -31,18 +31,21 @@ public class HomeController {
 		String[] date2 = HelpWithDate.dateHelper(date);
 		
 		model.addAttribute("zodiac", service.findZodiac(Integer.parseInt(date2[2]), date2[1]));
-		  System.out.println("Zodiac sign: " + service.findZodiac(Integer.parseInt(date2[2]), date2[1]));
+//		  System.out.println("Zodiac sign: " + service.findZodiac(Integer.parseInt(date2[2]), date2[1]));
 		model.addAttribute("birthDay", date2[0]);
-		  System.out.println("Birth day: " + date2[0]);
+//		  System.out.println("Birth day: " + date2[0]);
 		model.addAttribute("age", service.age(date));
-		  System.out.println("Age: " + service.age(date).get("Years") + " years "
-				   + service.age(date).get("Months") + " months " + service.age(date).get("Days") + " days");
+//		  System.out.println("Age: " + service.age(date).get("Years") + " years "
+//				   + service.age(date).get("Months") + " months " + service.age(date).get("Days") + " days");
 		
 		model.addAttribute("chineseBirthAnimal", service.chineseBirthAnimal(date));
-		  System.out.println("Chinese birth animal: " + service.chineseBirthAnimal(date));
+//		  System.out.println("Chinese birth animal: " + service.chineseBirthAnimal(date));
 		  
 		model.addAttribute("birthStone", service.birthStone(date));
-		  System.out.println("Birthstone: " + service.birthStone(date));
+//		  System.out.println("Birthstone: " + service.birthStone(date));
+		
+		
+		service.untilNextBirthday(date);
 		
 		return "redirect:/";
 	}
