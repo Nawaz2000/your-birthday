@@ -42,8 +42,12 @@ public class BirthdayService {
 		return bs.birthStone(date);
 	}
 	
-	public void untilNextBirthday(String date) throws ParseException {
-		af.untilNextBirthday(date);
+	public String untilNextBirthday(String date) throws ParseException {
+		return af.untilNextBirthday(date);
+	}
+
+	public HashMap<String, String> aliveFor(String date) throws ParseException {
+		return af.aliveFor(date);
 	}
 	
 }

@@ -13,6 +13,14 @@ import com.nawaz2000.yourbirthday.service.BirthdayService;
 
 import com.nawaz2000.yourbirthday.service.HelpWithDate;
 
+// added
+// star sign
+// Day of birth
+// exact age
+// chinese birth year
+// until next birthday
+// birthstone
+// 
 
 @Controller
 public class HomeController {
@@ -45,7 +53,9 @@ public class HomeController {
 //		  System.out.println("Birthstone: " + service.birthStone(date));
 		
 		
-		service.untilNextBirthday(date);
+		model.addAttribute("untilNextBirthDay", service.untilNextBirthday(date));
+		
+		model.addAttribute("aliveFor", service.aliveFor(date));
 		
 		return "redirect:/";
 	}
