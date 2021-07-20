@@ -1,6 +1,7 @@
 package com.nawaz2000.yourbirthday.controller;
 
 import java.text.ParseException;
+import java.time.LocalDate;
 
 import javax.websocket.server.PathParam;
 
@@ -20,6 +21,7 @@ import com.nawaz2000.yourbirthday.service.HelpWithDate;
 // chinese birth year
 // until next birthday
 // birthstone
+// alive for
 // 
 
 @Controller
@@ -29,7 +31,8 @@ public class HomeController {
 	BirthdayService service;
 	
 	@GetMapping("/")
-	public String showHome() {
+	public String showHome(Model model) {
+		model.addAttribute("localDate", LocalDate.now());
 		return "home";
 	}
 	
@@ -57,6 +60,8 @@ public class HomeController {
 		
 		model.addAttribute("aliveFor", service.aliveFor(date));
 		
+		
+		System.out.println(LocalDate.now());
 		return "redirect:/";
 	}
 	
