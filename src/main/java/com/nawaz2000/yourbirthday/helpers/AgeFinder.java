@@ -33,7 +33,7 @@ public class AgeFinder {
 		return age;
 	}
 	
-	public void untilNextBirthday(String date) throws ParseException {
+	public String untilNextBirthday(String date) throws ParseException {
 		
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 		formatter = formatter.withLocale( Locale.US );  // Locale specifies human language for translating, and cultural norms for lowercase/uppercase and abbreviations and such. Example: Locale.US or Locale.CANADA_FRENCH
@@ -51,17 +51,9 @@ public class AgeFinder {
         cal.set(Calendar.YEAR, LocalDate.now().getYear());
         Date firstDate = cal.getTime();
 
-        
-        System.out.println("first date");
-        System.out.println((firstDate.getYear() + 1900) + " " + firstDate.getMonth() + " " + firstDate.getDate());
-        System.out.println("second date");
-        System.out.println((secondDate.getYear() + 1900) + " " + secondDate.getMonth() + " " + secondDate.getDate());
-
         long diff = secondDate.getTime() - firstDate.getTime();
 
-        System.out.println ("Days: " + diff / 1000 / 60 / 60 / 24);
-		
-		
+		return Long.toString(diff/ 1000 / 60 / 60 / 24);
 		
 	}
 	
