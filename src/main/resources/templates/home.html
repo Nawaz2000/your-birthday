@@ -21,6 +21,7 @@
 		<div class="card-body">
 			<h1 class="card-title">Your Birthday!</h1>
 			
+			
 			<div class="col d-flex justify-content-center">
 				<div class="card" style="width: 28rem; ">
 					<div class="card-body">
@@ -41,7 +42,7 @@
 			<h6>
 				<form th:action="@{/birthdayInfo}" method="get">
 				<h5>
-					Date: <input type="date" name="date" th:attr="max=${localDate}"> <br><br>
+					Date: <input type="date" name="date" th:attr="max=${localDate}" th:value="${localDate}"> <br><br>
 				</h5>
 					<input class="btn btn-primary" type="submit"
 					value="Submit" />
@@ -55,4 +56,13 @@
 
 
 </body>
+
+<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+<script language="javascript" type="text/javascript">  
+    setInterval(function(){
+        $('#table_refresh').load("/");
+   },1000);
+</script>
+
+
 </html>
