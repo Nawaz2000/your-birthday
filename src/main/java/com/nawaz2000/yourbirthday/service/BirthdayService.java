@@ -26,7 +26,7 @@ public class BirthdayService {
 	@Autowired
 	private BirthStone bs;
 	
-	public String findZodiac(int day, String month) {
+	public HashMap<String, String> findZodiac(int day, String month) {
 		return zf.findZodiac(day, month);
 	}
 	

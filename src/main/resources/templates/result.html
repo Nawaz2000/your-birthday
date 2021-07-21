@@ -1,18 +1,47 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-	<link rel="stylesheet" href="result.css">
-	
-	
-    <title>Result</title>
-  </head>
+<!-- Bootstrap CSS -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+<link rel="stylesheet" href="result.css">
+
+
+<title>Result</title>
+</head>
 <body>
 
+	<div class="container" align="center" style="margin-top: 2em;">
+		<div
+			class="card border-success mb-3 shadow mb-5 bg-white rounded w-75" style="max-width: 38rem;">
+			<div class="card-header">Zodiac sign</div>
+			<div class="card-body text-success">
+			
+				<h4 class="card-title" align="left">
+					<span th:each="key: ${zodiac.keySet()}" >
+        				<span th:text="${key}"></span>
+    				</span>
+    			</h4>
+    			
+				<p class="card-text" align="justify">
+				<img class="card-img-top"  th:src="${image}" alt="Card image cap" style="float: right;size: 5em;width: 30%;margin: 1em;">
+					<span th:each="key: ${zodiac.keySet()}">					
+        				<span th:text="${zodiac.get(key)}" ></span>        				
+    				</span>
+				</p>
+				
+		</div>
+	</div>
+	
+	
+	</div>
+	
 </body>
 </html>

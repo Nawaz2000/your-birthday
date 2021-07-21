@@ -8,10 +8,12 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
+import java.util.HashMap;
 
 import javax.websocket.server.PathParam;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -47,24 +49,21 @@ public class HomeController {
 	public String getBInfo(@PathParam(value = "date") String date, Model model) throws ParseException {
 
 		String[] date2 = HelpWithDate.dateHelper(date);
-
-		model.addAttribute("zodiac", service.findZodiac(Integer.parseInt(date2[2]), date2[1]));
-//		  System.out.println("Zodiac sign: " + service.findZodiac(Integer.parseInt(date2[2]), date2[1]));
+		HashMap<String, String> zodiacSet = service.findZodiac(Integer.parseInt(date2[2]), date2[1]);
+		String image = "";
+		for (String temp : zodiacSet.keySet())
+			image = temp;
+		image = "images/" + image + ".jpg";
+		
+		
+		model.addAttribute("zodiac", zodiacSet);
 		model.addAttribute("birthDay", date2[0]);
-//		  System.out.println("Birth day: " + date2[0]);
 		model.addAttribute("age", service.age(date));
-//		  System.out.println("Age: " + service.age(date).get("Years") + " years "
-//				   + service.age(date).get("Months") + " months " + service.age(date).get("Days") + " days");
-
 		model.addAttribute("chineseBirthAnimal", service.chineseBirthAnimal(date));
-//		  System.out.println("Chinese birth animal: " + service.chineseBirthAnimal(date));
-
 		model.addAttribute("birthStone", service.birthStone(date));
-//		  System.out.println("Birthstone: " + service.birthStone(date));
-
 		model.addAttribute("untilNextBirthDay", service.untilNextBirthday(date));
-
 		model.addAttribute("aliveFor", service.aliveFor(date));
+		model.addAttribute("image", image);
 
 		System.out.println(LocalDate.now());
 		return "result";
