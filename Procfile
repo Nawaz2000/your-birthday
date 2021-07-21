@@ -1,0 +1,1 @@
+web: java -jar target/your-birthday-0.0.1-SNAPSHOT.jar
