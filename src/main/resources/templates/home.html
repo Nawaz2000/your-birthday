@@ -12,56 +12,69 @@
 	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
 	crossorigin="anonymous">
 
+<link rel="stylesheet" href="result.css">
+
 <title>Your Birthday</title>
 </head>
 <body>
-	
-	<div class="card text-center">
-		<div class="card-header">Featured</div>
+<div class="container" align="center" style="margin-top: 2em;">
+	<div class="card text-center shadow-lg mb-5 bg-white rounded w-75">
+		<div class="card text-center  border-0">
+		<div class="card-header bg-light">Featured</div>
 		<div class="card-body">
 			<h1 class="card-title">Your Birthday!</h1>
-			
-			
+
+
 			<div class="col d-flex justify-content-center">
-				<div class="card" style="width: 28rem; ">
-					<div class="card-body">
-						<h5><p class="card-text" align="justify">Discover what day you 
-						were born on, how many days there are until your next birthday, 
-						your star sign, exact age, your Chinese birth year, birthstone, 
-						number of days alive, days until next birthday, time you've 
-						been alive for!</p>
+
+				<div class="card shadow-lg mb-5 bg-info rounded" style="width: 28rem; background-color: #E6E6FA;">
+
+					<div class="card-body ">
+						<h5>
+							<p class="card-text" align="justify">Discover what day you
+								were born on, how many days there are until your next birthday,
+								your star sign, exact age, your Chinese birth year, birthstone,
+								number of days alive, days until next birthday, time you've been
+								alive for!</p>
 						</h5>
 					</div>
-					
+
 				</div>
+
 			</div>
-			
-			
+
+
 			<br>
 
 			<h6>
 				<form th:action="@{/birthdayInfo}" method="get">
-				<h5>
-					Date: <input type="date" name="date" th:attr="max=${localDate}" th:value="${localDate}"> <br><br>
-				</h5>
-					<input class="btn btn-primary" type="submit"
-					value="Submit" />
-			</form>
+					<h5>
+						Date: <input type="date" name="date" th:attr="max=${localDate}"
+							th:value="${localDate}"> <br> <br>
+					</h5>
+					<input class="btn btn-success" type="submit" value="Submit" />
+				</form>
 			</h6>
-			
+
 		</div>
-		<div class="card-footer text-muted">Your birthday calculator - v1.0</div>
+		<br>
+
+			<div class="card-footer text-muted bg-light" >Your birthday
+				calculator - v1.0</div>
+
+
+	</div>
 	</div>
 
-
-
+</div>
 </body>
 
-<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-<script language="javascript" type="text/javascript">  
-    setInterval(function(){
-        $('#table_refresh').load("/");
-   },1000);
+<script src="http://code.jquery.com/jquery-latest.min.js"
+	type="text/javascript"></script>
+<script language="javascript" type="text/javascript">
+	setInterval(function() {
+		$('#table_refresh').load("/");
+	}, 1000);
 </script>
 
 

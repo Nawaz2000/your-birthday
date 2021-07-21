@@ -67,7 +67,7 @@ public class HomeController {
 		model.addAttribute("aliveFor", service.aliveFor(date));
 
 		System.out.println(LocalDate.now());
-		return "redirect:/";
+		return "result";
 	}
 
 }
