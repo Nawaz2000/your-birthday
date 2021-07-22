@@ -7,6 +7,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Locale;
 
 import org.springframework.stereotype.Component;
@@ -16,7 +17,7 @@ import com.nawaz2000.yourbirthday.service.HelpWithDate;
 @Component("ageFinder")
 public class AgeFinder {
 	
-	public HashMap<String, Integer> age(String date) throws ParseException {
+	public LinkedHashMap<String, Integer> age(String date) throws ParseException {
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 		formatter = formatter.withLocale( Locale.US );  // Locale specifies human language for translating, and cultural norms for lowercase/uppercase and abbreviations and such. Example: Locale.US or Locale.CANADA_FRENCH
 		LocalDate dateOfBirth = LocalDate.parse(HelpWithDate.formatDate(date), formatter);
@@ -25,7 +26,7 @@ public class AgeFinder {
 		Period period = Period.between(dateOfBirth, LocalDate.now());
 		
 		
-		HashMap<String, Integer> age = new HashMap<>();
+		LinkedHashMap<String, Integer> age = new LinkedHashMap<>();
 		age.put("Years", period.getYears());
 		age.put("Months", period.getMonths());
 		age.put("Days", period.getDays());

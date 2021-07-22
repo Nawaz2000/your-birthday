@@ -2,6 +2,7 @@ package com.nawaz2000.yourbirthday.service;
 
 import java.text.ParseException;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,7 +31,7 @@ public class BirthdayService {
 		return zf.findZodiac(day, month);
 	}
 	
-	public HashMap<String, Integer> age(String date) throws ParseException{
+	public LinkedHashMap<String, Integer> age(String date) throws ParseException{
 		return af.age(date);
 	}
 	

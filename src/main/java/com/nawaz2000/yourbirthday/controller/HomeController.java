@@ -9,6 +9,7 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 import javax.websocket.server.PathParam;
 
@@ -54,13 +55,12 @@ public class HomeController {
 		for (String temp : zodiacSet.keySet())
 			image = temp;
 		image = image + ".jpg";
-		System.out.println("image: " + image);
-		
-		
+//		System.out.println("image: " + image);
+//		
+//		
 		String birthDayImage = date2[0] + ".jpg";
-		System.out.println(birthDayImage);
 		
-		
+		System.out.println("birthday: " + birthDayImage);
 		model.addAttribute("zodiac", zodiacSet);
 		model.addAttribute("birthDay", date2[0]);
 		model.addAttribute("age", service.age(date));
@@ -70,6 +70,10 @@ public class HomeController {
 		model.addAttribute("aliveFor", service.aliveFor(date));
 		model.addAttribute("image", image);
 		model.addAttribute("birthDayImage", birthDayImage);
+		
+		LinkedHashMap<String, Integer> x = service.age(date);
+		System.out.println("days: " + x.get("Days") + " months: " + x.get("Months") + " Years: " + x.get("Years"));
+		
 		
 		return "result";
 	}

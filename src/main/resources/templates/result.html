@@ -19,6 +19,7 @@
 <body>
 
 	<!-- Zodiac sign -->
+	
 	<div class="container" align="center" style="margin-top: 2em;">
 		<h3>
 			<b>Results</b>
@@ -48,25 +49,46 @@
 
 		<!-- day of birth -->
 
-		
+
 		<div class="row">
 			<div class="col-sm-6">
-				<div class="card border-danger mb-3 shadow mb-5 bg-white rounded" style="float: right; width: 70%">
-				<div class="card-header">Day of Birth</div>
+				<div class="card border-danger mb-3 shadow mb-5 bg-white rounded"
+					style="float: right; width: 70%">
+					<div class="card-header">Day of Birth</div>
 					<div class="card-body text-danger">
-						<img class="card-img-top" th:src="${birthDayImage}" alt="Card image cap"
-						style="float: right;">
+						<img class="card-img-top" th:src="${birthDayImage}"
+							alt="Card image cap" style="float: right;">
 					</div>
 				</div>
 			</div>
-			<div class="col-sm-6">
-				<div class="card border-warning mb-3 shadow mb-5 bg-white rounded" style="float: left; width: 70%">
-				<div class="card-header">Header</div>
-					<div class="card-body text-warning">
-						<h5 class="card-title">Special title treatment</h5>
-						<p class="card-text">With supporting text below as a natural
-							lead-in to additional content.</p>
-						<a href="#" class="btn btn-primary">Go somewhere</a>
+			<div class="col-sm-6 d-flex align-items-stretch">
+				<div class="card border-warning mb-3 shadow mb-5 bg-white rounded"
+					style="float: left; width: 70%">
+					<div class="card-header">Age</div>
+					<div class="card-body ">
+						<h5 class="card-title text-warning">Your exact age</h5>
+						<div class="card-body" align="justify">
+							Age is just a number, and agelessness means not buying into the idea that a number determines everything from your state of health to your attractiveness to your value.
+						</div>
+						<table class="table table-striped" style="width: 90%;">
+							<tbody>
+								<tr>
+									<th scope="row">1</th>
+									<td><b>Days</b></td>
+									<td><span th:text="${age.get('Days')}"></span></td>
+								</tr>
+								<tr>
+									<th scope="row">2</th>
+									<td><b>Months</b></td>
+									<td><span th:text="${age.get('Months')}"></span></td>
+								</tr>
+								<tr>
+									<th scope="row">3</th>
+									<td><b>Years</b></td>
+									<td><span th:text="${age.get('Years')}"></span></td>
+								</tr>
+							</tbody>
+						</table>
 					</div>
 				</div>
 			</div>

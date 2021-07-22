@@ -28,7 +28,6 @@ public class HelpWithDate {
 		else if (date2[0].equalsIgnoreCase("Sun"))
 			date2[0] = "Sunday";
 		
-		System.out.println(date2[0] + " " + date2[1] + " " + date2[2]);
 		return date2;
 	}
 	
