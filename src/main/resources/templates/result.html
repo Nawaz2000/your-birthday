@@ -164,6 +164,53 @@
 				</div>
 			</div>
 		</div>
+		
+		<!-- time lived -->
+		
+		<div
+			class="col-7 card border-info mb-3 shadow mb-5 bg-white rounded"
+			style="margin-top: 1em;">
+			<div class="card-header">Time lived</div>
+			<div class="card-body">
+				<h3 class="card-title text-info" align="center">
+					You have been alive for
+				</h3>
+				<br>
+
+				<h5>
+							<table class="table table-striped" style="width: 90%;">
+								<tbody>
+									<tr>
+										<th scope="row">1</th>
+										<td><b>Total full hours</b></td>
+										<td><span th:text="${aliveFor.get('hours')}"></span></td>
+									</tr>
+									<tr>
+										<th scope="row">2</th>
+										<td><b>Total full days</b></td>
+										<td><span th:text="${aliveFor.get('days')}"></span></td>
+									</tr>
+									<tr>
+										<th scope="row">3</th>
+										<td><b>Total full weeks</b></td>
+										<td><span th:text="${aliveFor.get('weeks')}"></span></td>
+									</tr>
+									<tr>
+										<th scope="row">3</th>
+										<td><b>Total full months</b></td>
+										<td><span th:text="${aliveFor.get('months')}"></span></td>
+									</tr>
+									<tr>
+										<th scope="row">3</th>
+										<td><b>Total full years</b></td>
+										<td><span th:text="${aliveFor.get('years')}"></span></td>
+									</tr>
+								</tbody>
+							</table>
+						</h5>
+
+			</div>
+		</div>
 
 
 
