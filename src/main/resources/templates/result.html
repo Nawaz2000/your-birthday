@@ -29,7 +29,7 @@
 			style="margin-top: 1em;">
 			<div class="card-header">Zodiac sign</div>
 			<div class="card-body">
-				<h3 class="card-title text-success" align="left">
+				<h3 class="card-title text-success" align="center">
 					<span th:each="key: ${zodiac.keySet()}"> <span
 						th:text="${key}"></span>
 					</span>
@@ -47,7 +47,7 @@
 			</div>
 		</div>
 
-		<!-- day of birth -->
+		<!-- day of birth and exact age -->
 
 
 		<div class="row">
@@ -66,10 +66,14 @@
 					>
 					<div class="card-header">Age</div>
 					<div class="card-body ">
-						<h5 class="card-title text-warning">Your exact age</h5>
-						<div class="card-body" align="justify" >
+						<h3 class="card-title text-warning">Your exact age</h3>
+						<h5>
+							<div class="card-body" align="justify" >
 							Age is just a number, and agelessness means not buying into the idea that a number determines everything from your state of health to your attractiveness to your value.
 						</div>
+						</h5>
+						
+						<h5>
 						<table class="table table-striped" style="width: 90%;">
 							<tbody>
 								<tr>
@@ -89,8 +93,35 @@
 								</tr>
 							</tbody>
 						</table>
+						</h5>
 					</div>
 				</div>
+			</div>
+		</div>
+		
+		
+		<!-- chinese birth year -->
+		
+		<div
+			class="col-7 card border-primary mb-3 shadow mb-5 bg-white rounded"
+			style="margin-top: 1em;">
+			<div class="card-header">Chinese birth year</div>
+			<div class="card-body">
+				<h3 class="card-title text-primary" align="center">
+					<span th:each="key: ${chineseBirthAnimal.keySet()}"> <span
+						th:text="${key}"></span>
+					</span>
+				</h3><br>
+				
+				<h5>
+				<p class="card-text" align="justify">
+					<img class="card-img-top" th:src="${chineseBYImage}" alt="Card image cap"
+						style="float: left; size: 5em; width: 30%; margin: 1em;"><span
+						th:each="key: ${chineseBirthAnimal.keySet()}"> <span
+						th:text="${chineseBirthAnimal.get(key)}"></span>
+					</span>
+				</p></h5>
+
 			</div>
 		</div>
 

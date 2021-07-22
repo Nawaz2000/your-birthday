@@ -55,24 +55,30 @@ public class HomeController {
 		for (String temp : zodiacSet.keySet())
 			image = temp;
 		image = image + ".jpg";
-//		System.out.println("image: " + image);
-//		
-//		
+		
+		
+		HashMap<String, String> chineseBY = service.chineseBirthAnimal(date);
+		String chineseBYImage = "";
+		for (String temp : chineseBY.keySet())
+			chineseBYImage = temp;
+		chineseBYImage = chineseBYImage + ".jpg";
+		
+		System.out.println("chineseBYI: " + chineseBYImage);
+		
+	
 		String birthDayImage = date2[0] + ".jpg";
 		
 		System.out.println("birthday: " + birthDayImage);
 		model.addAttribute("zodiac", zodiacSet);
 		model.addAttribute("birthDay", date2[0]);
 		model.addAttribute("age", service.age(date));
-		model.addAttribute("chineseBirthAnimal", service.chineseBirthAnimal(date));
+		model.addAttribute("chineseBirthAnimal", chineseBY);
 		model.addAttribute("birthStone", service.birthStone(date));
 		model.addAttribute("untilNextBirthDay", service.untilNextBirthday(date));
 		model.addAttribute("aliveFor", service.aliveFor(date));
 		model.addAttribute("image", image);
 		model.addAttribute("birthDayImage", birthDayImage);
-		
-		LinkedHashMap<String, Integer> x = service.age(date);
-		System.out.println("days: " + x.get("Days") + " months: " + x.get("Months") + " Years: " + x.get("Years"));
+		model.addAttribute("chineseBYImage", chineseBYImage);
 		
 		
 		return "result";

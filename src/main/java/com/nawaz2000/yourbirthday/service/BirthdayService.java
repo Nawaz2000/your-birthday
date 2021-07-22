@@ -35,7 +35,7 @@ public class BirthdayService {
 		return af.age(date);
 	}
 	
-	public String chineseBirthAnimal(String date) throws NumberFormatException, ParseException {
+	public HashMap<String, String> chineseBirthAnimal(String date) throws NumberFormatException, ParseException {
 		return cby.chineseBirthAnimal(date);
 	}
 	
