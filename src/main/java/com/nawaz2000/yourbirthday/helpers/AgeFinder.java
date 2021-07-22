@@ -54,7 +54,14 @@ public class AgeFinder {
 
         long diff = secondDate.getTime() - firstDate.getTime();
         
-		return Long.toString(diff/ 1000 / 60 / 60 / 24);
+        Long days = (diff/ 1000 / 60 / 60 / 24);
+        
+        int x = Integer.valueOf(days.intValue());
+        if (x > 365)
+        	x = x - 364;
+        days = (long) x;
+        
+		return Long.toString(days);
 		
 	}
 
