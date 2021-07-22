@@ -18,7 +18,7 @@
 </head>
 <body>
 <div class="container" align="center" style="margin-top: 2em;">
-	<div class="card text-center  shadow-lg mb-5 bg-white rounded w-75 ">
+	<div class="col-9 card text-center  shadow-lg mb-5 bg-white rounded">
 		<div class="card text-center  border-0" >
 		<div class="card-header bg-light" >Featured</div>
 		<div class="card-body">
@@ -27,7 +27,7 @@
 
 			<div class="col d-flex justify-content-center">
 
-				<div class="card shadow-lg mb-5 bg-info rounded" style="width: 28rem; background-color: #E6E6FA;">
+				<div class="col-6 card shadow-lg mb-5 bg-info rounded" style="background-color: #E6E6FA;">
 
 					<div class="card-body ">
 						<h5>
@@ -35,7 +35,7 @@
 								were born on, how many days there are until your next birthday,
 								your star sign, exact age, your Chinese birth year, birthstone,
 								number of days alive, days until next birthday, time you've been
-								alive for!</p>
+								alive for. Submit your birth date, and see for yourself!</p>
 						</h5>
 					</div>
 
@@ -52,7 +52,7 @@
 						Date: <input type="date" name="date" th:attr="max=${localDate}"
 							th:value="${localDate}"> <br> <br>
 					</h5>
-					<input class="btn btn-success" type="submit" value="Submit" />
+					<input class="col-1 btn btn-success" type="submit" value="Submit" />
 				</form>
 			</h6>
 
