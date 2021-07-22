@@ -13,17 +13,17 @@
 	crossorigin="anonymous">
 <link rel="stylesheet" href="result.css">
 <link rel="stylesheet" href="footer.css">
-
+<link rel="stylesheet" media="mediatype and|not|only (expressions)" href="result.css">
 
 <title>Result</title>
 </head>
 <body>
 
 
-<div class="container" align="center" style="margin-top: 2em;">
-	<div class="card2">
+<div class="container" align="center"  style="margin-top: 2em;">
+	<div class="card2" >
 		<div class="card-body" style="color: #007b5e;">
-			<h2 class="card-title"><b>Results</b></h2>
+			<h2 class="card-title" id="res"><b>Results</b></h2>
 		</h3>
 		<hr>
 		</div>
@@ -43,7 +43,7 @@
 	<div class="container" align="center" style="margin-top: 2em;">
 
 		<div
-			class="col-7 card border-success mb-3 shadow mb-5 bg-white rounded"
+			class="col-7 card border-success mb-3 shadow mb-5 bg-white rounded" id="single"
 			style="margin-top: 1em;">
 			<div class="card-header">Zodiac sign</div>
 			<div class="card-body">
@@ -73,7 +73,7 @@
 		<div class="row">
 			<div class="col-sm-6 d-sm-flex justify-content-end">
 				<div
-					class="col-9 card border-danger mb-3 shadow mb-5 bg-white rounded">
+					class="col-9 card border-danger mb-3 shadow mb-5 bg-white rounded" id="double">
 					<div class="card-header">Day of Birth</div>
 					<div class="card-body text-danger">
 						<img class="card-img-top" th:src="${birthDayImage}"
@@ -83,7 +83,7 @@
 			</div>
 			<div class="col-sm-6 d-sm-flex justify-content-start">
 				<div
-					class="col-9 card border-warning mb-3 shadow mb-5 bg-white rounded ">
+					class="col-9 card border-warning mb-3 shadow mb-5 bg-white rounded " id="double">
 					<div class="card-header">Age</div>
 					<div class="card-body ">
 						<h3 class="card-title text-warning">Your exact age</h3>
@@ -124,7 +124,7 @@
 		<!-- chinese birth year -->
 
 		<div
-			class="col-7 card border-primary mb-3 shadow mb-5 bg-white rounded"
+			class="col-7 card border-primary mb-3 shadow mb-5 bg-white rounded" id="single"
 			style="margin-top: 1em;">
 			<div class="card-header">Chinese birth year</div>
 			<div class="card-body">
@@ -154,7 +154,7 @@
 		<div class="row">
 			<div class="col-sm-6 d-sm-flex justify-content-end">
 				<div
-					class="col-9 card border-success mb-3 shadow mb-5 bg-white rounded">
+					class="col-9 card border-success mb-3 shadow mb-5 bg-white rounded" id="double">
 					<div class="card-header">Until next birthday</div>
 					<div class="card-body text-danger">
 
@@ -170,7 +170,7 @@
 			</div>
 			<div class="col-sm-6 d-sm-flex justify-content-start">
 				<div
-					class="col-9 card border-warning mb-3 shadow mb-5 bg-white rounded ">
+					class="col-9 card border-warning mb-3 shadow mb-5 bg-white rounded " id="double">
 					<div class="card-header">Birth stone</div>
 					<div class="card-body">
 						<h3 class="card-title text-warning">Your birth stone</h3>
@@ -184,7 +184,7 @@
 
 		<!-- time lived -->
 
-		<div class="col-7 card border-info mb-3 shadow mb-5 bg-white rounded"
+		<div class="col-7 card border-info mb-3 shadow mb-5 bg-white rounded" id="single"
 			style="margin-top: 1em;">
 			<div class="card-header">Time lived</div>
 			<div class="card-body">

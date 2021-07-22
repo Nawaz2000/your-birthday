@@ -6,3 +6,21 @@
 .card:hover {
   transform: scale(1.05); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
+
+@media only screen and (max-width: 768px) {
+  #single {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #double {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #res {
+    font-size: xx-large;
+  }
+}
