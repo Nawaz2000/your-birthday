@@ -26,7 +26,7 @@ public class BirthStone {
 	    else if (birthStone.equalsIgnoreCase("May"))
 	        return "Emerald";
 	    else if (birthStone.equalsIgnoreCase("Jun"))
-	        return "Alexandrite";
+	        return "Pearl";
 	    else if (birthStone.equalsIgnoreCase("July"))
 	    	return "Ruby";
 	    else if (birthStone.equalsIgnoreCase("Aug"))
@@ -34,11 +34,11 @@ public class BirthStone {
 	    else if (birthStone.equalsIgnoreCase("Sep"))
 	        return "Saphire";
 	    else if (birthStone.equalsIgnoreCase("Oct"))
-	        return "Tourmaline";
+	        return "Opal";
 	    else if (birthStone.equalsIgnoreCase("Nov"))
-	        return "Topaz";
+	        return "Citrine";
 	    else if (birthStone.equalsIgnoreCase("Dec"))
-	        return "Zircon";
+	        return "Topaz";
 	        
 		return "Not found";
 	}

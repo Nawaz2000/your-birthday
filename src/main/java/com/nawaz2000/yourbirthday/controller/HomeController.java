@@ -62,25 +62,25 @@ public class HomeController {
 		for (String temp : chineseBY.keySet())
 			chineseBYImage = temp;
 		chineseBYImage = chineseBYImage + ".jpg";
-		
-		System.out.println("chineseBYI: " + chineseBYImage);
-		
+			
 	
 		String birthDayImage = date2[0] + ".jpg";
+		String birthStone = service.birthStone(date);
 		
 		System.out.println("birthday: " + birthDayImage);
 		model.addAttribute("zodiac", zodiacSet);
 		model.addAttribute("birthDay", date2[0]);
 		model.addAttribute("age", service.age(date));
 		model.addAttribute("chineseBirthAnimal", chineseBY);
-		model.addAttribute("birthStone", service.birthStone(date));
+		model.addAttribute("birthStone", birthStone);
 		model.addAttribute("untilNextBirthDay", service.untilNextBirthday(date));
 		model.addAttribute("aliveFor", service.aliveFor(date));
 		model.addAttribute("image", image);
 		model.addAttribute("birthDayImage", birthDayImage);
 		model.addAttribute("chineseBYImage", chineseBYImage);
+		model.addAttribute("birthStone", (birthStone + ".jpg"));
 		
-		
+		System.out.println("birth stone: " + birthStone + ".jpg");
 		return "result";
 	}
 
