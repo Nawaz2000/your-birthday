@@ -18,30 +18,62 @@
 </head>
 <body>
 
+	<!-- Zodiac sign -->
 	<div class="container" align="center" style="margin-top: 2em;">
+		<h3>
+			<b>Results</b>
+		</h3>
 		<div
-			class="card border-success mb-3 shadow mb-5 bg-white rounded w-75" style="max-width: 38rem;">
+			class="card border-success mb-3 shadow mb-5 bg-white rounded w-75"
+			style="max-width: 38rem; margin-top: 1em;">
 			<div class="card-header">Zodiac sign</div>
 			<div class="card-body text-success">
-			
+
 				<h4 class="card-title" align="left">
-					<span th:each="key: ${zodiac.keySet()}" >
-        				<span th:text="${key}"></span>
-    				</span>
-    			</h4>
-    			
+					<span th:each="key: ${zodiac.keySet()}"> <span
+						th:text="${key}"></span>
+					</span>
+				</h4>
+
 				<p class="card-text" align="justify">
-				<img class="card-img-top"  th:src="${image}" alt="Card image cap" style="float: right;size: 5em;width: 30%;margin: 1em;">
-					<span th:each="key: ${zodiac.keySet()}">					
-        				<span th:text="${zodiac.get(key)}" ></span>        				
-    				</span>
+					<img class="card-img-top" th:src="${image}" alt="Card image cap"
+						style="float: right; size: 5em; width: 30%; margin: 1em;"> <span
+						th:each="key: ${zodiac.keySet()}"> <span
+						th:text="${zodiac.get(key)}"></span>
+					</span>
 				</p>
-				
+
+			</div>
 		</div>
+
+		<!-- day of birth -->
+
+		
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="card border-danger mb-3 shadow mb-5 bg-white rounded" style="float: right; width: 70%">
+				<div class="card-header">Day of Birth</div>
+					<div class="card-body text-danger">
+						<img class="card-img-top" th:src="${birthDayImage}" alt="Card image cap"
+						style="float: right;">
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="card border-warning mb-3 shadow mb-5 bg-white rounded" style="float: left; width: 70%">
+				<div class="card-header">Header</div>
+					<div class="card-body text-warning">
+						<h5 class="card-title">Special title treatment</h5>
+						<p class="card-text">With supporting text below as a natural
+							lead-in to additional content.</p>
+						<a href="#" class="btn btn-primary">Go somewhere</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
 	</div>
-	
-	
-	</div>
-	
+
 </body>
 </html>

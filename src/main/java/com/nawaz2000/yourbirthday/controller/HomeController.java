@@ -57,6 +57,10 @@ public class HomeController {
 		System.out.println("image: " + image);
 		
 		
+		String birthDayImage = date2[0] + ".jpg";
+		System.out.println(birthDayImage);
+		
+		
 		model.addAttribute("zodiac", zodiacSet);
 		model.addAttribute("birthDay", date2[0]);
 		model.addAttribute("age", service.age(date));
@@ -65,8 +69,8 @@ public class HomeController {
 		model.addAttribute("untilNextBirthDay", service.untilNextBirthday(date));
 		model.addAttribute("aliveFor", service.aliveFor(date));
 		model.addAttribute("image", image);
-
-		System.out.println(LocalDate.now());
+		model.addAttribute("birthDayImage", birthDayImage);
+		
 		return "result";
 	}
 
