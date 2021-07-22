@@ -27,12 +27,12 @@ public class BirthStone {
 	        return "Emerald";
 	    else if (birthStone.equalsIgnoreCase("Jun"))
 	        return "Pearl";
-	    else if (birthStone.equalsIgnoreCase("July"))
+	    else if (birthStone.equalsIgnoreCase("Jul"))
 	    	return "Ruby";
 	    else if (birthStone.equalsIgnoreCase("Aug"))
 	        return "Peridot";
 	    else if (birthStone.equalsIgnoreCase("Sep"))
-	        return "Saphire";
+	        return "Sapphire";
 	    else if (birthStone.equalsIgnoreCase("Oct"))
 	        return "Opal";
 	    else if (birthStone.equalsIgnoreCase("Nov"))
