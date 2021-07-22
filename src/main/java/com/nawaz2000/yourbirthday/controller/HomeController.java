@@ -54,6 +54,7 @@ public class HomeController {
 		for (String temp : zodiacSet.keySet())
 			image = temp;
 		image = image + ".jpg";
+		System.out.println("image: " + image);
 		
 		
 		model.addAttribute("zodiac", zodiacSet);
