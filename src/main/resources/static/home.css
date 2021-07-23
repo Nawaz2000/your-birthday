@@ -38,7 +38,7 @@
   }
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .card:hover { color: inherit; }
+@media (hover: none) and (pointer: fine) {
+  .card:hover { transform: scale(1.02); }
 }
 
