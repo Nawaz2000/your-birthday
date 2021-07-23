@@ -28,28 +28,28 @@ This app displays the following informations:
 </pre>      
 
 # Example screenshots
-Home screen
+**Home screen**
 ![Opening screen](https://github.com/Nawaz2000/your-birthday/blob/master/screenshots/Home.png)
 
-Date selection calendar
+**Date selection calendar**
 ![Opening screen](https://github.com/Nawaz2000/your-birthday/blob/master/screenshots/Calender.png)
 
-Zodiac sign
+**Zodiac sign**
 ![Opening screen](https://github.com/Nawaz2000/your-birthday/blob/master/screenshots/zodiac.png)
 
-Birth day and exact age
+**Birth day and exact age**
 ![Opening screen](https://github.com/Nawaz2000/your-birthday/blob/master/screenshots/day-age.png)
 
-Chinese birth year
+**Chinese birth year**
 ![Opening screen](https://github.com/Nawaz2000/your-birthday/blob/master/screenshots/chinese.png)
 
-Until next birthday and birth stone
+**Until next birthday and birth stone**
 ![Opening screen](https://github.com/Nawaz2000/your-birthday/blob/master/screenshots/until-stone.png)
 
-Time lived
+**Time lived**
 ![Opening screen](https://github.com/Nawaz2000/your-birthday/blob/master/screenshots/lived.png)
 
-Footer
+**Footer**
 ![Opening screen](https://github.com/Nawaz2000/your-birthday/blob/master/screenshots/footer.png)
 
 # Version
@@ -65,8 +65,8 @@ v1.3
 There are two ways of running the app: 
 **A. Run on web**
 
- 	1. Open any web browser (most preferably chrome)
- 	2. Copy and paste the link: https://your-birthday.herokuapp.com/
+1. Open any web browser (most preferably chrome)
+2. Copy and paste the link: (https://your-birthday.herokuapp.com/)
 
 **B. Run on local machine**
 
