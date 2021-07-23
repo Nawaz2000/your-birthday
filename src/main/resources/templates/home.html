@@ -19,9 +19,9 @@
 </head>
 <body>
 <div class="container" align="center"  id="contnr">
-	<div class="col-9 card text-center  shadow-lg mb-5 bg-white rounded" id="home">
+	<div class="col-9 card text-center  shadow-lg mb-5 bg-info rounded" id="home">
 		<div class="card text-center  border-0" >
-		<div class="card-header bg-light" >Featured</div>
+		<div class="card-header bg-light" style="margin-bottom: 0.3em;">Featured</div>
 		<div class="card-body">
 			<h1 class="card-title" style="margin-bottom: 0.4em;">Your Birthday!</h1>
 
@@ -30,7 +30,7 @@
 
 				<div class="col-6 card shadow-lg mb-5 bg-info rounded" id="home2" style="background-color: #E6E6FA;">
 
-					<div class="card-body ">
+					<div class="card-body">
 						<h5>
 							<p class="card-text" align="justify">Discover what day you
 								were born on, how many days there are until your next birthday,
@@ -44,11 +44,11 @@
 
 			</div>
 
-			<div align="center"> 
+			<div class="col d-flex justify-content-center" align="center"> 
 
 				<form th:action="@{/birthdayInfo}" method="get">
 					<h5>
-						Date: <input type="date" name="date" th:attr="max=${localDate}"
+						Date: <input type="date" name="date" id="d" th:attr="max=${localDate}"
 							th:value="${localDate}"> <br><br>
 					</h5>
 					<input class="btn btn-success" type="submit" value="Submit" />

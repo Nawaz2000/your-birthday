@@ -8,27 +8,33 @@
 }
 
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 600px) {
   #home {
     width: 95%;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 600px) {
   #home2 {
     width: 95%;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 600px) {
   #contnr {
-    margin-top: 1em;
+    margin-top: 1.5em;
   }
 }
 
 @media only screen and (min-width: 992px) {
   #contnr {
     margin-top: 2em;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #d {
+    size: 60%;
   }
 }
 
