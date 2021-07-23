@@ -7,9 +7,11 @@
   transform: scale(1.02); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
 
+
 @media only screen and (max-width: 768px) {
   #home {
     width: 95%;
+    height: 50%;
   }
 }
 
@@ -19,9 +21,3 @@
   }
 }
 
-@media only screen and (max-width: 768px) {
-	body{
-		height: 90%;
-	}
-	
-}
