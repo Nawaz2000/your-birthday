@@ -28,25 +28,25 @@ This app displays the following informations:
 </pre>      
 
 # Example screenshots
-**Home screen**__
+**Home screen**  
 ![Opening screen](https://github.com/Nawaz2000/your-birthday/blob/master/screenshots/Home.png)
 
-**Date selection calendar**__
+**Date selection calendar**  
 ![Opening screen](https://github.com/Nawaz2000/your-birthday/blob/master/screenshots/Calender.png)
 
-**Zodiac sign**__
+**Zodiac sign**  
 ![Opening screen](https://github.com/Nawaz2000/your-birthday/blob/master/screenshots/zodiac.png)
 
-**Birth day and exact age**__
+**Birth day and exact age**  
 ![Opening screen](https://github.com/Nawaz2000/your-birthday/blob/master/screenshots/day-age.png)
 
-**Chinese birth year**__
+**Chinese birth year**  
 ![Opening screen](https://github.com/Nawaz2000/your-birthday/blob/master/screenshots/chinese.png)
 
-**Until next birthday and birth stone**__
+**Until next birthday and birth stone**  
 ![Opening screen](https://github.com/Nawaz2000/your-birthday/blob/master/screenshots/until-stone.png)
 
-**Time lived**__
+**Time lived**  
 ![Opening screen](https://github.com/Nawaz2000/your-birthday/blob/master/screenshots/lived.png)
 
 **Footer**__
