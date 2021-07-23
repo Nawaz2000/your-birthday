@@ -62,7 +62,7 @@ v1.3
 4. **Upgradability:** Because of it's loosely coupled architecture, it is very easy and convenient to add new features  .
 
 # Installation
-There are two ways of running the app: 
+There are two ways of running the app:<br/>
 **A. Run on web**
 
 1. Open any web browser (most preferably chrome)
