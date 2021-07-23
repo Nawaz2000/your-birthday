@@ -11,13 +11,24 @@
 @media only screen and (max-width: 768px) {
   #home {
     width: 95%;
-    height: 50%;
   }
 }
 
 @media only screen and (max-width: 768px) {
   #home2 {
     width: 95%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #contnr {
+    margin-top: 1.5em;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  #contnr {
+    margin-top: 2em;
   }
 }
 
