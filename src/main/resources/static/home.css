@@ -38,3 +38,7 @@
   }
 }
 
+@media (hover: hover) and (pointer: fine) {
+  .card:hover { color: inherit; }
+}
+
