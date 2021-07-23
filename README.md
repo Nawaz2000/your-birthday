@@ -63,12 +63,12 @@ v1.3
 
 # Installation
 There are two ways of running the app:<br/>
-**### A. Run on web**
+### **A. Run on web**
 
 1. Open any web browser (most preferably chrome)
 2. Copy and paste the link: (https://your-birthday.herokuapp.com/)
 
-**### B. Run on local machine**
+### **B. Run on local machine**
 
 1. Make sure you have java installed in your PC
 2. Clone the entire project into your pc or copy only the Executable folder to your desired location
