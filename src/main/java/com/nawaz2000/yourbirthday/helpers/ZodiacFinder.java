@@ -65,7 +65,7 @@ public class ZodiacFinder {
 				return taurus;
 			else
 				return gemini;
-		} else if (month.equalsIgnoreCase("June")) {
+		} else if (month.equalsIgnoreCase("Jun")) {
 			if (day < 21)
 				return gemini;
 			else
