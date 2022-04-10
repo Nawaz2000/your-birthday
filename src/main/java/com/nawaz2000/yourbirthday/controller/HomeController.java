@@ -1,20 +1,12 @@
 package com.nawaz2000.yourbirthday.controller;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.Instant;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Calendar;
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 
 import javax.websocket.server.PathParam;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -55,15 +47,13 @@ public class HomeController {
 		for (String temp : zodiacSet.keySet())
 			image = temp;
 		image = image + ".jpg";
-		
-		
+
+
 		HashMap<String, String> chineseBY = service.chineseBirthAnimal(date);
 		String chineseBYImage = "";
 		for (String temp : chineseBY.keySet())
 			chineseBYImage = temp;
 		chineseBYImage = chineseBYImage + ".jpg";
-			
-	
 		String birthDayImage = date2[0] + ".jpg";
 		String birthStone = service.birthStone(date);
 		
@@ -79,7 +69,7 @@ public class HomeController {
 		model.addAttribute("birthDayImage", birthDayImage);
 		model.addAttribute("chineseBYImage", chineseBYImage);
 		model.addAttribute("birthStone", (birthStone + ".jpg"));
-		
+		model.addAttribute("famousPeople", service.getFamousPeople (date));
 		System.out.println("birth stone: " + birthStone + ".jpg");
 		return "result";
 	}
