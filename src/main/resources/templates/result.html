@@ -229,7 +229,6 @@
 
 		<!-- Famous people -->
 		<div class="container" align="center" style="margin-top: 2em;">
-
 			<div
 					class="col-7 card border-success mb-3 shadow mb-5 bg-white rounded" id="single"
 					style="margin-top: 1em;">
@@ -239,16 +238,18 @@
 						<thead>
 						<tr>
 							<th> Name </th>
-							<th> Desc </th>
+							<th> Short Desc </th>
+							<th> Full Desc </th>
 						</tr>
 						</thead>
 						<tbody>
 						<tr th:if="${famousPeople.isEmpty()}">
-							<td colspan="2">No found :( You are only one!</td>
+							<td colspan="3">No found :( You are only one!</td>
 						</tr>
 						<tr th:each="person : ${famousPeople}">
-							<td><span th:text="${person.name}"> Name </span></td>
-							<td><span th:text="${person.desc}"> Desc </span></td>
+							<td><a th:href="'https://en.wikipedia.org/wiki/'+${person.name}"><span th:text="${person.name}"> Name </span></a></td>
+							<td><span th:text="${person.shortDesc}"> Short Desc </span></td>
+							<td><span th:text="${person.fullDesc}"> Full Desc </span></td>
 						</tr>
 						</tbody>
 					</table>

@@ -3,27 +3,27 @@ package com.nawaz2000.yourbirthday.helpers.wikiFinder;
 
 public class WikiPerson {
 
-    private final String link;
-
     private final String name;
 
-    private final String desc;
+    private final String shortDesc;
 
-    public WikiPerson(String link, String name, String desc) {
-        this.link = link;
+    private final String fullDesc;
+
+    public WikiPerson(String name, String shortDesc, String fullDesc) {
         this.name = name;
-        this.desc = desc;
-    }
-
-    public String getLink() {
-        return link;
+        this.shortDesc = shortDesc;
+        this.fullDesc = fullDesc;
     }
 
     public String getName() {
         return name;
     }
 
-    public String getDesc() {
-        return desc;
+    public String getShortDesc() {
+        return shortDesc;
+    }
+
+    public String getFullDesc() {
+        return fullDesc;
     }
 }

@@ -13,9 +13,9 @@ public class FamousPeopleFinder {
 
     public Set<WikiPerson> getWikiPeople(String date) {
         wikiPersonSet.clear();
-        wikiPersonSet.add(new WikiPerson("link", "name","description"));
-        wikiPersonSet.add(new WikiPerson("link2", "name2","description2"));
-        wikiPersonSet.add(new WikiPerson("link3", "name3","description3"));
+        wikiPersonSet.add(new WikiPerson("name1", "Short description1","Full description1"));
+        wikiPersonSet.add(new WikiPerson("name2", "Short description2","Full description2"));
+        wikiPersonSet.add(new WikiPerson("name3", "Short description3","Full description3"));
         return wikiPersonSet;
     }
 }
