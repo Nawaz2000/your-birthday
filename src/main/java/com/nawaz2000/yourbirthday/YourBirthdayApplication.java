@@ -18,6 +18,7 @@ public class YourBirthdayApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(YourBirthdayApplication.class, args);
+		//new FamousPeopleFinder().getWikiPeople("1986-10-21").forEach(p-> System.out.println(p.getName()+"|||"+p.getShortDesc()+"|||"+p.getFullDesc()));
 	}
 
 }

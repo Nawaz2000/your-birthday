@@ -11,27 +11,29 @@ import java.util.stream.Collectors;
 @Component("famousPeopleFinder")
 public class FamousPeopleFinder {
 
-    private Wiki wiki = new Wiki.Builder().build();
+    Wiki wiki = new Wiki.Builder().build();
 
-    private Set<WikiPerson> wikiPersonSet = new HashSet<>();
-
-    private List<String> getBirthdaysFromWiki(String dateStr) {
-
-        //date to wiki title (like '2022-12-04' to 'april 12')
+    //date to wiki title (like '2022-12-04' to 'april 12')
+    private LocalDate parseDateStr(String dateStr) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDate date = LocalDate.parse(dateStr, formatter);
-        String wikiTitle = date.getMonth().name().toLowerCase() + " " + date.getDayOfMonth();
+        return date;
+    }
 
-        //get text of wiki page
-        String wikiPageText = wiki.getPageText(wikiTitle);
+    //get text of wiki page
+    private String getWikiText (LocalDate date) {
+        String wikiTitle = date.getMonth().name().toLowerCase() + " " + date.getDayOfMonth();
+        return wiki.getPageText(wikiTitle);
+    }
+
+    public List<String> parseWikiPageText (String wikiPageText, LocalDate date) {
 
         //get section of births on wiki page
         int birthsStartsAt = wikiPageText.indexOf("==Births=="); //start of the Births section
         int birthsEndAt = wikiPageText.indexOf("==Deaths==", birthsStartsAt); //end of the Births section
         String wikiBirthsSection = wikiPageText.substring(birthsStartsAt, birthsEndAt); //Section with births on wiki page
 
-
-        //remove garbage and get only requierd births
+        //remove garbage and get only required births
         return wikiBirthsSection.lines().filter(f -> f.startsWith("*")) //only req strings (starts with "*")
                 .map(p -> p.trim().replaceAll("(^\\*)|([\\[\\]]|(<ref.*))", "")) // remove garbage "*", "[", "]","<ref/>" tag
                 .map(p -> p.replaceAll("(\\s*&ndash;\\s*)", ";")) // transform &ndash" to separator ";"
@@ -40,13 +42,13 @@ public class FamousPeopleFinder {
                 .collect(Collectors.toList()); //to List
     }
 
-    //transoform strings to WikiPerson Obj
+    //transform strings to WikiPerson Obj
     private Set<WikiPerson> transformBirthdayStrToPeople(List<String> birthdaysFromWiki) {
         return birthdaysFromWiki.stream().map(p->birthStrToWikiPerson(p)).collect(Collectors.toSet());
     }
 
     //input format "[year];[name];[short desc]".
-    private WikiPerson birthStrToWikiPerson(String birthStr) {
+    public WikiPerson birthStrToWikiPerson(String birthStr) {
 
         String name;
         String shortDesc;
@@ -61,8 +63,12 @@ public class FamousPeopleFinder {
         //get WikiPerson
         return new WikiPerson(name, shortDesc, fullDesc);
     }
-    //public API :)
+    //get peoples to representation :)
     public Set<WikiPerson> getWikiPeople(String date) {
-        return transformBirthdayStrToPeople(getBirthdaysFromWiki(date));
+        LocalDate parsedDate = parseDateStr(date); //get legal date
+        String wikiText = getWikiText(parsedDate); //get wiki text
+        List<String> wikiStrings = parseWikiPageText(wikiText,parsedDate); //parse wiki text
+        Set<WikiPerson> wikiPeople = transformBirthdayStrToPeople (wikiStrings); //get people
+        return wikiPeople;
     }
 }
