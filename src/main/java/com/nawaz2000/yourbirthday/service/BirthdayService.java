@@ -6,7 +6,7 @@ import java.util.LinkedHashMap;
 import java.util.Set;
 
 import com.nawaz2000.yourbirthday.helpers.*;
-import com.nawaz2000.yourbirthday.helpers.wikiFinder.WikiPerson;
+import com.nawaz2000.yourbirthday.helpers.WikiPerson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

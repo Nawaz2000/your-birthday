@@ -1,4 +1,4 @@
-package com.nawaz2000.yourbirthday.helpers.wikiFinder;
+package com.nawaz2000.yourbirthday.helpers;
 
 
 public class WikiPerson {

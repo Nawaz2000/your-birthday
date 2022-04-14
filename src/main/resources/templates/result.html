@@ -244,10 +244,10 @@
 						</thead>
 						<tbody>
 						<tr th:if="${famousPeople.isEmpty()}">
-							<td colspan="3">No found :( You are only one!</td>
+							<td colspan="3">No found. You are only one!</td>
 						</tr>
 						<tr th:each="person : ${famousPeople}">
-							<td><a th:href="'https://en.wikipedia.org/wiki/'+${person.name}"><span th:text="${person.name}"> Name </span></a></td>
+							<td><a th:href="'https://en.wikipedia.org/wiki/'+${person.name}" target="_blank"><span th:text="${person.name}"> Name </span></a></td>
 							<td><span th:text="${person.shortDesc}"> Short Desc </span></td>
 							<td><span th:text="${person.fullDesc}"> Full Desc </span></td>
 						</tr>
