@@ -227,9 +227,34 @@
 			</div>
 		</div>
 
-
-
-	</div>
+		<!-- Famous people -->
+		<div class="container" align="center" style="margin-top: 2em;">
+			<div
+					class="col-7 card border-success mb-3 shadow mb-5 bg-white rounded" id="single"
+					style="margin-top: 1em;">
+				<div class="card-header">Was anybody else born that day?</div>
+				<div class="card-body">
+					<table class="table table-striped" style="width: 90%;">
+						<thead>
+						<tr>
+							<th> Name </th>
+							<th> Short Desc </th>
+							<th> Full Desc </th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr th:if="${famousPeople.isEmpty()}">
+							<td colspan="3">No found. You are only one!</td>
+						</tr>
+						<tr th:each="person : ${famousPeople}">
+							<td><a th:href="'https://en.wikipedia.org/wiki/'+${person.name}" target="_blank"><span th:text="${person.name}"> Name </span></a></td>
+							<td><span th:text="${person.shortDesc}"> Short Desc </span></td>
+							<td><span th:text="${person.fullDesc}"> Full Desc </span></td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
 
 
 	<div align="center">

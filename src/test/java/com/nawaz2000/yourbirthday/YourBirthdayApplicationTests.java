@@ -9,5 +9,4 @@ class YourBirthdayApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
 }
