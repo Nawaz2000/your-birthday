@@ -467,9 +467,9 @@ public class FamousPeopleFinderTests {
                 "[[Category:October]]\n";
         List<String> expected = new ArrayList<>();
 
-        expected.add("1986;Almen Abdi;Swiss footballer");
-        expected.add("1986;Chibuzor Chilaka;Nigerian footballer");
-        expected.add("1986;Scott Rendell;English footballer");
+        expected.add("1986;;Almen Abdi;;Swiss footballer");
+        expected.add("1986;;Chibuzor Chilaka;;Nigerian footballer");
+        expected.add("1986;;Scott Rendell;;English footballer");
 
         FamousPeopleFinder famousPeopleFinder = new FamousPeopleFinder();
         List<String> actual = famousPeopleFinder.parseWikiPageText(wikiPageText, date);
