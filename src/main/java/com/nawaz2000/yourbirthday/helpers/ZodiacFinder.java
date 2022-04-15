@@ -9,18 +9,18 @@ import org.springframework.stereotype.Component;
 @Component("zodiacFinder")
 public class ZodiacFinder {
 	
-	private HashMap<String, String> capricorn = new HashMap<>();
-	private HashMap<String, String> aquarius = new HashMap<>();
-	private HashMap<String, String> pisces = new HashMap<>();
-	private HashMap<String, String> aries = new HashMap<>();
-	private HashMap<String, String> taurus = new HashMap<>();
-	private HashMap<String, String> gemini = new HashMap<>();
-	private HashMap<String, String> cancer = new HashMap<>();
-	private HashMap<String, String> leo = new HashMap<>();
-	private HashMap<String, String> virgo = new HashMap<>();
-	private HashMap<String, String> libra = new HashMap<>();
-	private HashMap<String, String> scorpio = new HashMap<>();
-	private HashMap<String, String> sagittarius = new HashMap<>();
+	private final HashMap<String, String> capricorn = new HashMap<>();
+	private final HashMap<String, String> aquarius = new HashMap<>();
+	private final HashMap<String, String> pisces = new HashMap<>();
+	private final HashMap<String, String> aries = new HashMap<>();
+	private final HashMap<String, String> taurus = new HashMap<>();
+	private final HashMap<String, String> gemini = new HashMap<>();
+	private final HashMap<String, String> cancer = new HashMap<>();
+	private final HashMap<String, String> leo = new HashMap<>();
+	private final HashMap<String, String> virgo = new HashMap<>();
+	private final HashMap<String, String> libra = new HashMap<>();
+	private final HashMap<String, String> scorpio = new HashMap<>();
+	private final HashMap<String, String> sagittarius = new HashMap<>();
 
 	@PostConstruct
 	public void mapping() {

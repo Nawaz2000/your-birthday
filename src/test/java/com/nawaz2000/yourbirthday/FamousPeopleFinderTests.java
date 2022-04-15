@@ -1,6 +1,7 @@
 package com.nawaz2000.yourbirthday;
 
 import com.nawaz2000.yourbirthday.helpers.FamousPeopleFinder;
+import com.nawaz2000.yourbirthday.helpers.WikiPerson;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -9,6 +10,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
@@ -477,7 +479,21 @@ public class FamousPeopleFinderTests {
         assertEquals(expected,actual);
     }
 
-    //birthStrToWikiPerson(String birthStr)
 
+    //input format "[year];;[name];;[short desc];;[full desc]".
+    //output WikiPerson.name = [name]; WikiPerson.shortDesc = [short desc]; WikiPerson.fullDesc = [full desc];
+    @Test
+    @DisplayName("Check converter String to WikiPerson obj")
+    void birthStrToWikiPersonTest() {
+        String input = "1986;;Kristian Sarkies;;Australian footballer;;Kristian Sarkies (born 25 October 1986 in Melbourne, Australia) is an Australian footballer who plays for Beaumaris SC in the Victorian State League 1. He grew up in Dingley Village, a suburb in Melbourne's South-East 10 kilometres from his current club in Beaumaris. His previous spells include at A-League clubs Melbourne Victory, Adelaide United and Melbourne Heart. More recently he has played in the NPL.";
+        WikiPerson excepted = new WikiPerson("Kristian Sarkies","Australian footballer","Kristian Sarkies (born 25 October 1986 in Melbourne, Australia) is an Australian footballer who plays for Beaumaris SC in the Victorian State League 1. He grew up in Dingley Village, a suburb in Melbourne's South-East 10 kilometres from his current club in Beaumaris. His previous spells include at A-League clubs Melbourne Victory, Adelaide United and Melbourne Heart. More recently he has played in the NPL.");
+        FamousPeopleFinder famousPeopleFinder = new FamousPeopleFinder();
+        WikiPerson actual = famousPeopleFinder.birthStrToWikiPerson(input);
 
+        assertAll("wikiPerson name",
+                () -> assertEquals(excepted.getName(), actual.getName()),
+                () -> assertEquals(excepted.getShortDesc(), actual.getShortDesc()),
+                () -> assertEquals(excepted.getFullDesc(), actual.getFullDesc())
+        );
+    }
 }

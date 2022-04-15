@@ -12,18 +12,18 @@ import com.nawaz2000.yourbirthday.service.HelpWithDate;
 @Component("chineseBirthYear")
 public class ChineseBirthYear {
 	
-	private HashMap<String, String> rat = new HashMap<>();
-	private HashMap<String, String> ox = new HashMap<>();
-	private HashMap<String, String> tiger = new HashMap<>();
-	private HashMap<String, String> rabbit = new HashMap<>();
-	private HashMap<String, String> dragon = new HashMap<>();
-	private HashMap<String, String> snake = new HashMap<>();
-	private HashMap<String, String> horse = new HashMap<>();
-	private HashMap<String, String> sheep = new HashMap<>();
-	private HashMap<String, String> monkey = new HashMap<>();
-	private HashMap<String, String> rooster = new HashMap<>();
-	private HashMap<String, String> dog = new HashMap<>();
-	private HashMap<String, String> pig = new HashMap<>();
+	private final HashMap<String, String> rat = new HashMap<>();
+	private final HashMap<String, String> ox = new HashMap<>();
+	private final HashMap<String, String> tiger = new HashMap<>();
+	private final HashMap<String, String> rabbit = new HashMap<>();
+	private final HashMap<String, String> dragon = new HashMap<>();
+	private final HashMap<String, String> snake = new HashMap<>();
+	private final HashMap<String, String> horse = new HashMap<>();
+	private final HashMap<String, String> sheep = new HashMap<>();
+	private final HashMap<String, String> monkey = new HashMap<>();
+	private final HashMap<String, String> rooster = new HashMap<>();
+	private final HashMap<String, String> dog = new HashMap<>();
+	private final HashMap<String, String> pig = new HashMap<>();
 	
 	@PostConstruct
 	public void mapping() {

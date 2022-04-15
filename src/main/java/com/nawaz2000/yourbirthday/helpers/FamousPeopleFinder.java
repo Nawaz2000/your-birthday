@@ -25,7 +25,7 @@ public class FamousPeopleFinder {
                 .collect(Collectors.toList()); //to List
     }
 
-    //input format "[year];[name];[short desc];[full desc]".
+    //input format "[year];;[name];;[short desc];;[full desc]".
     public WikiPerson birthStrToWikiPerson(String birthStr) {
 
         String name;

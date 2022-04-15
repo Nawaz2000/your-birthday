@@ -9,7 +9,6 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 import com.nawaz2000.yourbirthday.helpers.*;
-import com.nawaz2000.yourbirthday.helpers.WikiPerson;
 import io.github.fastily.jwiki.core.Wiki;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -74,8 +73,7 @@ public class BirthdayService {
 		List<String> birthdaysFromWikiWithExtract = birthdaysFromWiki.stream().map(p->p+";;"+wiki.getTextExtract(p.split(";;")[1])).collect(Collectors.toList());
 
 		//get people to represent
-		Set<WikiPerson> wikiPeople = birthdaysFromWikiWithExtract.stream().map(p->fpf.birthStrToWikiPerson(p)).collect(Collectors.toSet());
-		return wikiPeople;
+		return birthdaysFromWikiWithExtract.stream().map(p->fpf.birthStrToWikiPerson(p)).collect(Collectors.toSet());
 	}
 	
 }
