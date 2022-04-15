@@ -467,9 +467,6 @@ public class FamousPeopleFinderTests {
                 "[[Category:October]]\n";
         List<String> expected = new ArrayList<>();
 
-        //1986;Almen Abdi;Swiss footballer
-        //1986;Chibuzor Chilaka;Nigerian footballer
-        //1986;Scott Rendell;English footballer
         expected.add("1986;Almen Abdi;Swiss footballer");
         expected.add("1986;Chibuzor Chilaka;Nigerian footballer");
         expected.add("1986;Scott Rendell;English footballer");
@@ -479,6 +476,8 @@ public class FamousPeopleFinderTests {
 
         assertEquals(expected,actual);
     }
+
+    //birthStrToWikiPerson(String birthStr)
 
 
 }

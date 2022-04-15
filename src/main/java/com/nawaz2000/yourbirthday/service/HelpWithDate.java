@@ -3,6 +3,8 @@ package com.nawaz2000.yourbirthday.service;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 public class HelpWithDate {
@@ -41,5 +43,12 @@ public class HelpWithDate {
 		String dmy = dmyFormat.format(date1);
 		
 		return dmy;
+	}
+
+
+	public static LocalDate getLocalDateByStr(String dateStr) {
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		LocalDate date = LocalDate.parse(dateStr, formatter);
+		return date;
 	}
 }
